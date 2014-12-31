@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 3.6  (Windows)">
+	<META NAME="CREATED" CONTENT="20130314;12185085">
+	<META NAME="CHANGED" CONTENT="20130314;12363837">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 2cm }
+		P { margin-bottom: 0.21cm }
+		H1 { text-indent: 0.63cm; margin-top: 0.85cm; color: #365f91; line-height: 150%; text-align: justify; page-break-inside: avoid; page-break-after: avoid }
+		H1.western { font-family: "Cambria", serif; font-size: 14pt }
+		H1.cjk { font-family: "Times New Roman", serif; font-size: 14pt }
+		H1.ctl { font-family: "Times New Roman", serif; font-size: 14pt; so-language: en-US }
+		H2 { margin-top: 0.35cm; color: #4f81bd; page-break-inside: avoid; page-break-after: avoid }
+		H2.western { font-family: "Cambria", serif; font-size: 13pt }
+		H2.cjk { font-family: "Times New Roman", serif; font-size: 13pt }
+		H2.ctl { font-family: "Times New Roman", serif; font-size: 13pt }
+		A:link { color: #0000ff }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" LINK="#0000ff" DIR="LTR">
+<H1 CLASS="western" STYLE="margin-bottom: 0.5cm"><FONT FACE="Calibri, sans-serif">Empezando
+con nuestro proyecto</FONT></H1>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Vamos
+a crear un proyecto vac&iacute;o y vamos a explicar que es lo que
+contiene y algunas cosas b&aacute;sicas que profundizaremos luego.</FONT></FONT></P>
+<H2 CLASS="western" STYLE="margin-bottom: 0.5cm"><A NAME="__RefHeading__113_1545772330"></A>
+<FONT FACE="Calibri, sans-serif">Archivo XML</FONT></H2>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Antes
+de programar vamos a crear la parte visual de nuestra actividad,
+modificando el archivo xml que se cre&oacute; autom&aacute;ticamente
+junto a nuestro proyecto en el directorio <I>/res/layout/</I>, en
+nuestro caso modificaremos nuestra actividad principal que se
+encuentra en <I>/res/layout/activity_main.xml</I>. Podemos ver la
+parte gr&aacute;fica presionando la pesta&ntilde;a &ldquo;<I>Graphical
+Layout</I>&rdquo; y el c&oacute;digo de la parte gr&aacute;fica en la
+pesta&ntilde;an <I>actividad_main.xml</I>.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="empezando_nuestro_proyecto_html_m29f8bf36.png" NAME="Picture 9" ALIGN=BOTTOM WIDTH=467 HEIGHT=280 BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><FONT FACE="Calibri, sans-serif"><I>C&oacute;digo
+por defecto de nuestra primera pantalla</I></FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Lo
+primero que vemos es que todo est&aacute; contenido dentro de la
+etiqueta &ldquo;</FONT></FONT><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><I>RelativaLayout</I></FONT></FONT>&rdquo;
+<FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">el
+cual es un </FONT></FONT><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><I>layout</I></FONT></FONT><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">.
+Los </FONT></FONT><EM><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">layout
+</FONT></FONT></EM><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">son
+elementos </FONT></FONT><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>no</B></FONT></FONT>
+<FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">visibles
+que permite agrupar y distribuir en el espacio los controles que
+incluyamos en su interior (algo as&iacute; como una tabla).Para
+nuestro ejemplo cambiaremos el </FONT></FONT><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><I>RelativeLayout</I></FONT></FONT>
+<FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">por
+un </FONT></FONT><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><I>LinearLayou
+(</I></FONT></FONT><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">pronto
+explicaremos m&aacute;s a fondo los tipos de layout y c&oacute;mo
+utilizarlos).</FONT></FONT></P>
+<P STYLE="margin-top: 0.49cm; margin-bottom: 0.49cm; line-height: 100%">
+<FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Dentro
+de nuestro LinearLayout incluiremos 3 controles: una etiqueta
+(TextView), un campo de texto (EditText) y un bot&oacute;n (Button),
+podemos ir al editor gr&aacute;fico (Graphical Layout) y arrastrar
+los controles a nuestro o crearlos directamente desde el c&oacute;digo,
+recomiendo arrastrar los controles desde el apartado gr&aacute;fico y
+luego ver el c&oacute;digo que se genera (pesta&ntilde;a
+activity_main.xml). </FONT></FONT>
+</P>
+<P ALIGN=CENTER STYLE="margin-top: 0.49cm; margin-bottom: 0.49cm; line-height: 100%">
+<IMG SRC="empezando_nuestro_proyecto_html_m6bb4d26e.png" NAME="gr&aacute;ficos1" ALIGN=BOTTOM WIDTH=490 HEIGHT=432 BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-top: 0.49cm; margin-bottom: 0.49cm; line-height: 100%">
+<FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Podemos
+ver que cada control tiene sus propiedades, las m&aacute;s
+importantes son las siguientes:</FONT></FONT></P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm; line-height: 100%"><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>android:id</B>.
+	Es la ID del control, con la que podremos identificarlo cuando la
+	utilicemos dentro de nuestra actividad. </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0.35cm; line-height: 100%"><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>android:text</B>.
+	Texto del control. El texto que mostrar&aacute; el control se puede
+	utilizar una cadena de texto escrita por nosotros directamente (esto
+	es poco recomendable) o definidas en los recursos del proyecto
+	dentro del fichero <I>strings.xml </I>de la carpeta <I>values </I>(esto
+	es lo m&aacute;s recomendable), en cuyo caso indicaremos su
+	identificador precedido del prefijo &ldquo;@string/&rdquo;.<BR></FONT></FONT><BR><BR>
+	</P>
+	<LI><P STYLE="margin-bottom: 0.49cm; line-height: 100%"><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><SPAN LANG="en-US"><B>android:layout_height</B></SPAN>
+	<SPAN LANG="en-US">y </SPAN><SPAN LANG="en-US"><B>android:layout_width</B></SPAN><SPAN LANG="en-US">.
+	</SPAN>Son las dimensiones del control con respecto al layout que lo
+	contiene. La propiedad &ldquo;wrap_content&rdquo; nos sirve para que
+	el control se adapte al contenido del mismo (si observan en la
+	&ldquo;<B>XXXX&rdquo;</B> el ancho del bot&oacute;n es solo del
+	porte de su texto, esto se debe a que su ancho utiliza
+	&ldquo;wrap_content&rdquo;), o bien &ldquo;fill_parent&rdquo; para
+	indicar que el ancho o el alto del control se ajustar&aacute; al
+	ancho o alto del layout contenedor (es decir, el ancho o alto de un
+	control nunca ser&aacute; mayor al de su Layout contenedor).</FONT></FONT></P>
+</UL>
+<P STYLE="margin-top: 0.49cm; margin-bottom: 0.49cm; line-height: 100%">
+<FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Adem&aacute;s
+para los <I>LinearLayout</I> contamos con la propiedad <I><B>orientation</B></I>
+el cual indica de qu&eacute; manera se mostrar&aacute;n los controles
+que son incluidos <I>dentro del LinearLayout, </I>que puede ser
+<I>vertical</I> u <I>horizontal. En </I>Android 4 y superiores si no
+indicamos este atributo tomar&aacute; el valor <I>horizontal</I> por
+defecto (si no me equivoco en versiones antiguas el valor por defecto
+es el <I>vertical</I>)<I>,</I> en nuestro caso elijaremos vertical
+para que los 3 controles que hemos incluidos de arriba hacia abajo
+(de manera vertical).</FONT></FONT></P>
+<H1 CLASS="western" STYLE="margin-bottom: 0.5cm"><A NAME="__RefHeading__115_1545772330"></A>
+<FONT FACE="Calibri, sans-serif">Archivo Java</FONT></H1>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Vamos
+a crear nuestra actividad (Activity) principal, para esto abrimos
+nuestra clase principal creada autom&aacute;ticamente por Eclipse
+<I>MainActivity.java.<BR></I></FONT></FONT><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="empezando_nuestro_proyecto_html_m73e56d0d.png" NAME="gr&aacute;ficos2" ALIGN=MIDDLE WIDTH=589 HEIGHT=237 BORDER=0></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<UL>
+	<P STYLE="margin-top: 0.21cm; margin-bottom: 0cm; line-height: 150%">
+	<FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><I>-
+	</I></FONT><FONT SIZE=2 STYLE="font-size: 11pt">Metodo </FONT><FONT SIZE=2 STYLE="font-size: 11pt"><B>onCreate</B></FONT><FONT SIZE=2 STYLE="font-size: 11pt">:
+	Es el m&eacute;todo por donde inicia autom&aacute;ticamente la
+	actividad cuando es llamada.</FONT></FONT></P>
+	<P STYLE="margin-top: 0.21cm; margin-bottom: 0cm; line-height: 150%">
+	<FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">-
+	</FONT><FONT SIZE=2 STYLE="font-size: 11pt"><B>setContentView</B></FONT><FONT SIZE=2 STYLE="font-size: 11pt">:
+	Asigna a la vista el contenido del recurso layout (es decir,
+	referencia a la parte gr&aacute;fica de la actividad).</FONT></FONT></P>
+	<P STYLE="margin-top: 0.21cm; margin-bottom: 0cm; line-height: 150%">
+	<FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt"><B>-
+	R.layout.activity_main</B>: Recurso de layout de la aplicaci&oacute;n,
+	en este caso el layout es el archivo activity_main.xml (no hay que
+	escribir la extensi&oacute;n).</FONT></FONT></P>
+	<P STYLE="margin-top: 0.21cm; margin-bottom: 0cm; line-height: 150%">
+	<FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">-
+	Metodo <B>onCreateOptionsMenu</B>: Permite crear nuestro men&uacute;
+	de opciones de cada Actividad, m&aacute;s adelante veremos c&oacute;mo
+	utilizarlo, por ahora no lo utilizaremos.</FONT></FONT></P>
+</UL>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Debemos
+obtener una referencia a los diferentes controles de la interfaz que
+necesitemos manipular para crear una instancia, en nuestro caso un
+EditText y un Button. Para ello utilizaremos el m&eacute;todo
+findViewById() indicando el ID de cada control y adem&aacute;s
+debemos indicar de que tipo de objeto es nuestra instancia (EditText
+para el primero y Button para el segundo).</FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="empezando_nuestro_proyecto_html_794fdb66.png" NAME="Picture 6" ALIGN=BOTTOM WIDTH=553 HEIGHT=49 BORDER=0></P>
+<P ALIGN=CENTER STYLE="text-indent: 0.63cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 150%">
+<BR>
+</P>
+<P ALIGN=CENTER STYLE="text-indent: 0.63cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 150%">
+<FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt"><I><B>Obteniendo
+a la referencia de nuestros controles<BR></B></I></FONT></FONT><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Nuestro
+EditText queda referenciado con una instancia llamada
+&ldquo;editText_nombre&rdquo; (m&aacute;s adelante explicaremos por
+que la declaramos como &ldquo;final&rdquo;) y el Button como
+&ldquo;button_mostrar_mensaje&rdquo;.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Como
+queremos enviar un mensaje luego de presionar el bot&oacute;n,
+debemos captar el evento de presionar el bot&oacute;n, esto se logra
+con el metodo &ldquo;OnClick&rdquo; de la siguiente manera.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="empezando_nuestro_proyecto_html_m10aebcc4.png" NAME="Picture 7" ALIGN=BOTTOM WIDTH=559 HEIGHT=104 BORDER=0></P>
+<P ALIGN=CENTER STYLE="text-indent: 0.63cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 150%">
+<FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt"><I><B>Metodo
+onClick de un bot&oacute;n<BR></B></I></FONT></FONT><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Adem&aacute;s
+dentro del m&eacute;todo onClik crearemos un String que guardara
+nuestro mensaje. Para capturar el mensaje guardaremos el texto de
+nuestro EditText el cual se obtiene con el m&eacute;todo &ldquo;getText()&rdquo;
+y luego la transformamos en un String con el m&eacute;todo
+&ldquo;toString()&rdquo;.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Finalmente
+enviamos el mensaje, esto se puede lograr a trav&eacute;s de la clase
+Toast que nos proporciona Android, los Toast se utilizan de la
+siguiente manera:</FONT></FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><FONT COLOR="#000000"><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-US"><SPAN STYLE="text-decoration: none">Toast</SPAN></SPAN></FONT></FONT></FONT><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-US">.makeText(</SPAN></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-US"><SPAN STYLE="text-decoration: none">Context</SPAN></SPAN></FONT></FONT></FONT>
+<FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-US">context,
+</SPAN></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-US"><SPAN STYLE="text-decoration: none">CharSecuence</SPAN></SPAN></FONT></FONT></FONT>
+<FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 9pt"><SPAN LANG="en-US">text,
+int duration)</SPAN></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Calibri, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">En
+donde &ldquo;context&rdquo; es el contexto de nuestra aplicaci&oacute;n
+que se puede obtener a trav&eacute;s del m&eacute;todo
+<FONT COLOR="#000000">getApplicationContext() que nos proporciona
+Android, &ldquo;text&rdquo; es el texto que queremos mostrar y
+&ldquo;duration&rdquo; es cu&aacute;nto tiempo va a ser mostrado
+nuestro texto. Adicionalmente podemos agregar la funci&oacute;n
+show() para mostrar el mensaje en pantalla (apenas se lea esa l&iacute;nea
+de c&oacute;digo).</FONT></FONT></FONT></P>
+</BODY>
+</HTML>

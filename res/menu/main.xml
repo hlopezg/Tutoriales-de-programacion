@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_search"
+        android:actionLayout="@layout/layout_search_edittext"
+        android:icon="@drawable/ic_search"
+        android:showAsAction="always|collapseActionView"
+        android:title="Buscar por nombre o autor"/>
+
+</menu>

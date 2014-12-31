@@ -1,0 +1,21 @@
+20/07/2014 1.116
+- Correción de error en WebViewDemoActivity con getActionBar() 
+
+28/06/2014 1.113
+- Arregladp errpres de filtro
+- Nuevo tutorial de html5
+
+09/12/2013 0.21
+- Ahora se agrupa por el nombre del lenguaje.
+- Correción de error menor.
+- Nuevos tutoriales de:
+ * Corona
+ * JavaScript
+
+09/12/2013 0.2
+- Correción de un error para versiones anteriores de Android 4.0
+- Nuevos tutoriales de:
+* Python
+* jQuery Mobile
+* Unity
+* Windows Phone 8

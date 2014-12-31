@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView_pdf_recomendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4sp"
+        android:text="Necesitar instalar un lector de PDF para abrir este documento" />
+
+    <Button
+        android:id="@+id/button_pdf_buscar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_blue"
+        style="@style/ButtonText"
+        android:layout_marginTop="4sp"
+        android:text="Buscar el Google Play" />
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4sp"
+        android:text="Recomendamos" />
+        
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dip"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/button_pdf_adobe"
+            style="@style/ButtonText"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:background="@drawable/btn_blue"
+            android:drawableTop="@drawable/pdf_adobe"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="Descargar Adobe Reader" />
+
+        <Button
+            android:id="@+id/button_pdf_viewer_for_mobile"
+            style="@style/ButtonText"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:background="@drawable/btn_blue"
+            android:drawableTop="@drawable/pdf_viewer_for_mobile"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="Descargar PDF Viewer for Mobile" />
+    </LinearLayout>
+
+</LinearLayout>

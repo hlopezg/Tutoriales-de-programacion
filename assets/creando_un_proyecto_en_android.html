@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 3.6  (Windows)">
+	<META NAME="CREATED" CONTENT="20130314;15212357">
+	<META NAME="CHANGED" CONTENT="20130314;15225239">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 2cm }
+		P { margin-bottom: 0.21cm }
+		H1 { text-indent: 0.63cm; margin-top: 0.85cm; color: #365f91; line-height: 150%; text-align: justify; page-break-inside: avoid; page-break-after: avoid }
+		H1.western { font-family: "Cambria", serif; font-size: 14pt }
+		H1.cjk { font-family: "Times New Roman", serif; font-size: 14pt }
+		H1.ctl { font-family: "Times New Roman", serif; font-size: 14pt; so-language: en-US }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<H1 CLASS="western">Creando un proyecto en Android</H1>
+<P STYLE="margin-bottom: 0cm">Una vez instalado el Eclipse con el SDK
+de Android y la versi&oacute;n de Android, debemos ir al siguiente
+men&uacute; del Eclipse &ldquo;File-&gt;New-&gt;Other&rdquo; y elegir
+la opci&oacute;n &ldquo;Android-&gt;Android Aplication Proyect&rdquo;,
+luego escogeremos las opciones de nuestro proyecto como el nombre de
+la aplicaci&oacute;n la cual se llamar&aacute; tutorial1, si queremos
+tambi&eacute;n cambiamos el nombre del proyecto y del package
+(nosotros lo dejaremos tal cual), en la opci&oacute;n Build SDK la
+versi&oacute;n del SDK en la que desarrollaremos y la versi&oacute;n
+m&iacute;nima del SDK en las que escogeremos las versiones 4.1
+(API16) y 2.2 (API 8) respectivamente (luego explicaremos esto). Lo
+dem&aacute;s lo dejaremos intacto as&iacute; que apretaremos &ldquo;Next&rdquo;
+hasta finalizar.<BR><BR>
+</P>
+<P LANG="" ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="creando_un_proyecto_en_android/creando_un_proyecto_en_android_html_m38c9ae36.png" NAME="gr&aacute;ficos1" ALIGN=BOTTOM WIDTH=366 HEIGHT=340 BORDER=0></P>
+<P LANG="" ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="creando_un_proyecto_en_android/creando_un_proyecto_en_android_html_4a00b504.png" NAME="gr&aacute;ficos2" ALIGN=BOTTOM WIDTH=359 HEIGHT=334 BORDER=0></P>
+<P LANG="" ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="creando_un_proyecto_en_android/creando_un_proyecto_en_android_html_m41be4da8.png" NAME="gr&aacute;ficos3" ALIGN=BOTTOM WIDTH=374 HEIGHT=348 BORDER=0></P>
+<P LANG="" ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="creando_un_proyecto_en_android/creando_un_proyecto_en_android_html_67baf43a.png" NAME="gr&aacute;ficos4" ALIGN=BOTTOM WIDTH=370 HEIGHT=342 BORDER=0></P>
+<P STYLE="margin-bottom: 0cm">Al realizar estos pasos se creara
+nuestro proyecto vac&iacute;o, pero antes de comenzar a programa
+debemos entender  la estructura de nuestro proyecto.</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm; page-break-before: always"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><B>Estructura de un proyecto Android</B></P>
+<P LANG="" ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="creando_un_proyecto_en_android/creando_un_proyecto_en_android_html_m49143d.png" NAME="gr&aacute;ficos5" ALIGN=BOTTOM WIDTH=249 HEIGHT=293 BORDER=0></P>
+<P ALIGN=CENTER STYLE="text-indent: 0.63cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 150%">
+<BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><B>Carpeta /src/</B></P>
+<P STYLE="margin-bottom: 0cm">Contiene todo el c&oacute;digo fuente
+de la aplicaci&oacute;n, c&oacute;digo de la interfaz gr&aacute;fica,
+clases auxiliares, etc. Inicialmente, Eclipse crear&aacute; por
+nosotros el c&oacute;digo b&aacute;sico de la pantalla (<EM>Activity</EM>)
+principal de la aplicaci&oacute;n, siempre bajo la estructura del
+paquete java definido.</P>
+<P LANG="" ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="creando_un_proyecto_en_android/creando_un_proyecto_en_android_html_74a8865d.png" NAME="gr&aacute;ficos6" ALIGN=BOTTOM WIDTH=203 HEIGHT=72 BORDER=0></P>
+<P ALIGN=CENTER STYLE="text-indent: 0.63cm; margin-top: 0.21cm; margin-bottom: 0cm; line-height: 150%">
+<BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><B>Carpeta /res/</B></P>
+<P STYLE="margin-top: 0.49cm; margin-bottom: 0.49cm; line-height: 100%">
+Contiene todos los ficheros de recursos necesarios para el proyecto:
+im&aacute;genes, v&iacute;deos, cadenas de texto, etc. Los diferentes
+tipos de recursos de deber&aacute;n distribuir en carpetas, las m&aacute;s
+importantes son las siguientes:</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0cm; line-height: 100%">/res/drawable/.
+	Contienen las im&aacute;genes de la aplicaci&oacute;n. Se puede
+	dividir en /drawable-ldpi, /drawable-mdpi, /drawable-hdpi y
+	/drawable-xhdpi para utilizar diferentes recursos dependiendo de la
+	resoluci&oacute;n del dispositivo.</P>
+	<LI><P STYLE="margin-bottom: 0.35cm; line-height: 100%">/res/layout/.
+	Contienen los ficheros de definici&oacute;n de las diferentes
+	pantallas de la interfaz gr&aacute;fica. 
+	</P>
+	<LI><P STYLE="margin-bottom: 0.49cm; line-height: 100%">/res/values/.
+	Contiene otros recursos de la aplicaci&oacute;n como por ejemplo
+	cadenas de texto (strings.xml), estilos (styles.xml), colores
+	(colors.xml), etc.</P>
+</UL>
+<P ALIGN=CENTER STYLE="margin-left: 1.27cm; margin-bottom: 0.35cm"><FONT SIZE=3><SPAN LANG=""><B><BR></B></SPAN></FONT><SPAN LANG=""><IMG SRC="creando_un_proyecto_en_android/creando_un_proyecto_en_android_html_2ee39f19.png" NAME="gr&aacute;ficos7" ALIGN=BOTTOM WIDTH=165 HEIGHT=165 BORDER=0></SPAN></P>
+<P STYLE="margin-bottom: 0cm"><B>Carpeta /gen</B></P>
+<P STYLE="margin-bottom: 0cm">En esta carpeta se generan o actualizan
+algunos archivos autom&aacute;ticamente por Eclipse cada vez que
+compilamos nuestro proyecto, no debemos manipular estos archivos. El
+archivo m&aacute;s importante es el &ldquo;R.java&rdquo; que contiene
+las ID de todas los recursos que creemos en nuestro proyecto, es
+decir que si modificamos manualmente este archivo es probable que
+nuestro proyecto no compile.</P>
+<P LANG="" ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="creando_un_proyecto_en_android/creando_un_proyecto_en_android_html_m29fa982a.png" NAME="gr&aacute;ficos8" ALIGN=BOTTOM WIDTH=181 HEIGHT=215 BORDER=0></P>
+<P STYLE="margin-bottom: 0cm; line-height: 0.64cm"><FONT FACE="Times New Roman, serif"><FONT SIZE=3><STRONG><FONT COLOR="#555555"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 10pt">Carpeta
+/assets/</FONT></FONT></FONT></STRONG></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.51cm; line-height: 0.64cm"><FONT COLOR="#555555"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 10pt">Contienes
+los archivos adicionales que queramos incluir en nuestro proyecto.
+Por lo general podemos copiar archivos xml, bases de datos, videos,
+etc. Para que nuestro proyecto pueda leerlos o copiarlos en la
+memoria interna del proyecto. Para acceder a estos archivos en
+necesario conocer la ruta y el nombre del archivo dentro de la
+carpeta assets (es decir, no se crear&aacute; una ID en la clase R).</FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.51cm; line-height: 0.64cm"><FONT COLOR="#555555"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 10pt"><B>Carpeta
+/bin	</B></FONT></FONT></FONT></P>
+<P STYLE="margin-bottom: 0.51cm; line-height: 0.64cm"><FONT COLOR="#555555"><FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 10pt">En
+esta carpeta se generaran algunos archivos propios de la aplicaci&oacute;n,
+no debemos tocarla.</FONT></FONT></FONT></P>
+<P LANG="" ALIGN=CENTER STYLE="margin-bottom: 0.51cm; line-height: 0.64cm">
+<FONT COLOR="#555555"><IMG SRC="creando_un_proyecto_en_android/creando_un_proyecto_en_android_html_m728accf9.png" NAME="gr&aacute;ficos9" ALIGN=BOTTOM WIDTH=163 HEIGHT=111 BORDER=0></FONT></P>
+<P STYLE="margin-bottom: 0cm"><B>Carpeta /libs</B></P>
+<P STYLE="margin-bottom: 0cm">En esta carpeta se guardan las
+librer&iacute;as auxiliares que vamos a utilizar, por defecto incluye
+la librer&iacute;a <I>android-support-v4.jar</I> que permite utilizar
+las caracter&iacute;sticas de Android 4.x en dispositivos con Android
+2.x aun que naturalmente tiene sus limitaciones y por eso
+utilizaremos directamente la versi&oacute;n 4.2 de Android.</P>
+<P LANG="" ALIGN=CENTER STYLE="margin-bottom: 0cm"><IMG SRC="creando_un_proyecto_en_android/creando_un_proyecto_en_android_html_m6d473bfc.png" NAME="gr&aacute;ficos10" ALIGN=BOTTOM WIDTH=183 HEIGHT=37 BORDER=0></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-top: 0.49cm; margin-bottom: 0.49cm; line-height: 100%">
+<FONT FACE="Times New Roman, serif"><FONT SIZE=3><STRONG><FONT FACE="Arial, sans-serif"><U>Fichero
+AndroidManifest.xml</U></FONT></STRONG></FONT></FONT></P>
+<P STYLE="margin-top: 0.49cm; margin-bottom: 0.49cm; line-height: 100%">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=2 STYLE="font-size: 11pt">Es
+un archivo xml que contiene los aspectos principales de la
+aplicaci&oacute;n, como por ejemplo su identificaci&oacute;n (nombre,
+versi&oacute;n, icono, etc.), las actividades o los permisos
+necesarios. Este archivo de puede editar ya sea por c&oacute;digo o
+por el editor gr&aacute;fico, puede parecer ser m&aacute;s f&aacute;cil
+utilizar el editor gr&aacute;fico pero en realidad es mucho m&aacute;s
+sencillo manipularlo por c&oacute;digo.</FONT></FONT></P>
+<P LANG="" ALIGN=CENTER STYLE="margin-top: 0.49cm; margin-bottom: 0.49cm; line-height: 100%">
+<IMG SRC="creando_un_proyecto_en_android/creando_un_proyecto_en_android_html_b1f4d23.png" NAME="gr&aacute;ficos11" ALIGN=BOTTOM WIDTH=589 HEIGHT=455 BORDER=0></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+</BODY>
+</HTML>

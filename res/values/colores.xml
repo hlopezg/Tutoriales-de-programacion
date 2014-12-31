@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="rojo">#ff0000</color>
+	<color name="verde">#00ff00</color>
+	<color name="azul">#0000ff</color>
+	<color name="blanco">#ffffff</color>
+	<color name="negro">#000000</color>
+	<color name="background">#F3E2A9</color>
+	<color name="celeste">#819FF7</color>
+	<color name="celeste2">#A9A9F5</color>
+	<color name="azul_ecofor">#073763</color>
+	<color name="celeste_ultra_claro">#E1EBFF</color>
+</resources>

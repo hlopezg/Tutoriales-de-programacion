@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- the theme applied to the application or activity -->
+    <style name="CustomActionBarTheme" parent="@style/AppTheme">
+        <item name="android:actionBarStyle">@style/AppTheme</item>
+    </style>
+
+    <!-- ActionBar styles -->
+    <style name="MyActionBar" parent="@style/AppTheme">
+        <item name="android:background">@drawable/button_modern_orange</item>
+    </style>
+
+    <style name="Theme.MyAppTheme" parent="android:style/Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/Theme.MyAppTheme.ActionBar</item>
+        <item name="android:actionMenuTextColor">#fff</item>
+    </style>
+
+    <style name="Theme.MyAppTheme.ActionBar" parent="android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@drawable/button_modern_red</item>
+        <item name="android:titleTextStyle">@style/Theme.MyAppTheme.ActionBar.TitleTextStyle</item>
+        <item name="android:subtitleTextStyle">@style/Theme.MyAppTheme.ActionBar.SubTitleTextStyle</item>
+    </style>
+    
+    <style name="Theme.MyAppTheme.ActionBar.MenuText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="Theme.MyAppTheme.ActionBar.TitleTextStyle" parent="android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="Theme.MyAppTheme.ActionBar.SubTitleTextStyle" parent="android:style/TextAppearance.Holo.Widget.ActionBar.Subtitle">
+        <item name="android:textColor">#fff</item>
+    </style>
+
+</resources>

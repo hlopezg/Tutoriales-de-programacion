@@ -1,0 +1,707 @@
+﻿<html xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<LINK href="css.css" rel="stylesheet" type="text/css">
+
+
+
+</head>
+
+<body>
+<div class="lines highlight">
+
+<h1 >Layouts</h1>
+
+<p >Los Layouts son una
+parte fundamental en Android ya que me permite organizar todos los controles
+visuales de nuestra aplicación en cada pantalla que mostremos, podríamos decir
+que un Layout es como una ventana dentro de una aplicación de escritorio, pero
+tiene varias diferencias. Por ejemplo si queremos hacer un formulario con
+campos de texto y botones, todo eso debe estar alineado dentro de un Layout que
+envuelve todo e incluso puede haber varios Layout dentro deotros (que es lo
+más comun) para poder dar un orden adecuado.</p>
+
+<p >Los Layout disponibles son los siguientes:</p>
+
+<p>&#65381; Linear Layout</p>
+
+<p> &#65381; Relative Layout</p>
+
+<p> &#65381; Table Layout</p>
+
+<p> &#65381; Absolute Layout</p>
+
+<p>&#65381; Frame Layout</p>
+
+<p>En este curso solo
+hablaremos de los LinearLayout y RelativeLayout ya que son los más utilizados.
+Antes utilizaba los TableLayout para cuando quería mostrar datos dentro de una
+tabla pero con el tiempo me di cuenta que puedo hacer lo mismo utilizando
+LinearLayout (uno por cada fila) o en algunos casos con RelativeLayout.</p>
+
+<p>Podemos incluir Layout dentro de Layouts o Views dentro de Layout, pero hay que tratar de evitar de
+hacer esto (o de crear la menor cantidad de Layout posibles) ya que esto afecta en la memoria del dispositivo.</p>
+
+<h2>LinearLayout</h2>
+
+<p>Es el más simple de utilizar (prácticamente es el unico que yo utilizo) todos los controles que
+pondremos dentro de un LinearLayout se van colocando uno detrás de otro, y podemos
+indicar se irán organizando de manera vertical u horizontal.</p>
+
+<p>Para
+Realizaremos un pequeño formulario con 1 Layout y 3 controles (un TextView,
+EditText y Button), podemos realizarlo tanto por código como por el apartado
+gráfico.</p></br>
+
+<pre class="line-pre">
+
+<span class="cp">&lt;?xml version="1.0" encoding="utf-8"?></span>
+
+<span class="nt">&lt;LinearLayout</span>
+  <span class="na">xmlns:android=</span> <span class="s">"http://schemas.android.com/apk/res/android"</span>
+  <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+  <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+  <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+  <span class="na">android:orientation=</span><span class="s">"vertical"</span>
+  <span class="nt">></span>
+	
+  <span class="nt">&lt;TextView</span>
+	<span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+	<span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+	<span class="na">android:text=</span><span class="s">"@string/hello_world"</span>
+	<span class="nt">/></span>
+	
+  <span class="nt">&lt;EditText</span>
+	<span class="na">android:id=</span><span class="s">"@+id/editText_tutorial_1"</span>
+	<span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+	<span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+	<span class="na">android:layout_weight=</span><span class="s">"1"</span>
+	<span class="na">android:ems=</span><span class="s">"10"</span><span class="nt">></span>
+	<span class="nt">&lt;requestFocus</span><span class="nt">/></span>
+	<span class="nt">&lt;/EditText></span>
+	
+  <span class="nt">&lt;Button</span>
+	<span class="na">android:id=</span><span class="s">"@+id/button_tutorial_1"</span>
+	<span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+	<span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+	<span class="na">android:text=</span><span class="s">"Button"</span>
+	<span class="nt">/></span>
+<span class="nt">&lt;/LinearLayout></span>
+
+</pre>
+
+<p align=center> <img 
+src="layouts/image002.jpg" ></p>
+</br>
+<p>Como mencionamos anteriormente podemos incluir Layout dentro de otros Layout y también podemos
+dar orientación vertical u horizontal, utilizaremos esto para alinear
+correctamente nuestro pequeño formulario, para esto recomiendo hacerlo
+directamente por código como sigue a continuación.</p>
+
+<pre class="line-pre">
+
+<span class="nt">&lt;LinearLayout</span>
+  <span class="na">xmlns:android=</span> <span class="s">"http://schemas.android.com/apk/res/android"</span>
+  <span class="na">xmlns:tools=</span> 	<span class="s">"http://schemas.android.com/tools"</span>
+  <span class="na">android:layout_width=</span> <span class="s">"match_parent"</span>
+  <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+  <span class="na">android:orientation=</span><span class="s">"vertical"</span>
+  <span class="nt">></span>
+  <span class="nt">&lt;LinearLayout</span>
+	<span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+	<span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+	<span class="na">android:orientation=</span><span class="s">"horizontal"</span>
+	<span class="nt">></span>
+    <span class="nt">&lt;TextView</span>
+	  <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+	  <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+	  <span class="na">android:layout_centerHorizontal=</span><span class="s">"true"</span>
+	  <span class="na">android:layout_centerVertical=</span><span class="s">"true"</span>
+	  <span class="na">android:text=</span><span class="s">"texto"</span>
+	  <span class="nt">/></span>
+    <span class="nt">&lt;EditText</span>
+	  <span class="na">android:id=</span><span class="s">"@+id/editText1"</span>
+	  <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+	  <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+	  <span class="na">android:ems=</span><span class="s">"10"</span>
+	  <span class="nt">></span>
+    <span class="nt">&lt;requestFocus</span><span class="nt">/></span>
+	<span class="nt">&lt;/EditText></span>
+  <span class="nt">&lt;/LinearLayout></span>
+  <span class="nt">&lt;Button</span>
+	<span class="na">android:id=</span><span class="s">"@+id/button1"</span>
+	<span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+	<span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+	<span class="na">android:text=</span><span class="s">"Button"</span>
+  <span class="nt">/></span>
+<span class="nt">&lt;/LinearLayout></span>
+</pre>
+
+<p align=center><img  src="layouts/image004.jpg" v:shapes="Imagen_x0020_15"/></span>
+</br>
+
+Como mencionamos anteriormente podemos incluir Layout dentro de otros Layout y también podemos dar orientación vertical u horizontal, utilizaremos esto para alinear correctamente nuestro pequeño formulario, para esto recomiendo hacerlo directamente por código como sigue a continuación.
+<pre>
+<span class="nt">&lt; LinearLayout </span> 
+    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:orientation=</span><span class="s">"vertical"</span><span class="nt">></span>
+
+    <span class="nt">&lt; LinearLayout </span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:orientation=</span><span class="s">"horizontal"</span> </span><span class="nt">></span>
+
+        <span class="nt">&lt; TextView </span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_centerHorizontal=</span><span class="s">"true"</span>
+            <span class="na">android:layout_centerVertical=</span><span class="s">"true"</span>
+            <span class="na">android:text=</span><span class="s">"texto" </span><span class="nt">/></span>
+
+        <span class="nt">&lt; EditText</span>
+            <span class="na">android:id=</span><span class="s">"@+id/editText1"</span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:ems=</span><span class="s">"10" </span><span class="nt">/></span>
+
+            <span class="nt">&lt;requestFocus</span><span class="nt">/></span>
+        <span class="nt">&lt;/ EditText &gt;</span>
+    <span class="nt">&lt;/ LinearLayout &gt;</span>
+
+    <span class="nt">&lt; Button </span>
+        <span class="na">android:id=</span><span class="s">"@+id/button1"</span>
+        <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:text=</span><span class="s">"Button" </span><span class="nt">/></span>
+
+<span id="nt">&lt;/ LinearLayout &gt;</span>
+</pre>
+
+<p align=center><img 
+src="layouts/image004.jpg" v:shapes="Imagen_x0020_15"/></p>
+</br>
+<p> Es decir que nuestros Layout y controles tienen la siguiente estructura:</p>
+
+<p align=center><img 
+src="layouts/image006.jpg" v:shapes="Imagen_x0020_16"/></p>
+</br>
+<h2>layout_width y layout_height</h2>
+
+Si nos fijamos en la parte gráfica del código anterior, podemos ver que el que el botón que creamos tiene el ancho según el largo del texto que contiene, si queremos que tome el ancho completo del dispositivo tenemos que cambiar la siguiente propiedad android:layout_width="wrap_content" por android:layout_width="match_parent" 
+De esta manera indicamos que el botón tome el ancho máximo que puede tomar el Layout en donde se incluye, quedando nuestro apartado gráfico esta manera.
+
+<p align=center><img 
+src="layouts/image008.jpg" v:shapes="Imagen_x0020_17"/></p>
+</br>
+Un error común que solemos cometer y asignar malos valores a nuestro layout_width y layout_height. Haremos algo malo a propósito para darnos cuenta que debemos comprender bien estas propiedades, vamos a cambiar el alto del Layout interno (el que contienen el TextView y el EditText) y le daremos el tamaño del primer Layout. Para esto cambiaremos la propiedad layout_height de wrap_content a match_parent, de esta manera el Layout interno tiene el mismo alto que el Layout principal ocupando toda la pantalla (marque el rojo el Layout para que se dieran cuenta), es por esto que el botón (button) no se ve ya que está justo debajo de la pantalla.
+<pre>
+<span class="nt">&lt; LinearLayout </span> 
+    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:orientation=</span><span class="s">"vertical" </span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt; LinearLayout </span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+        <span class="na">android:orientation=</span><span class="s">"horizontal" </span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt; TextView </span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:text=</span><span class="s">"Esto es un TextView" </span><span class="nt">/&gt;</span>
+
+        <span class="nt">&lt; EditText</span>
+            <span class="na">android:id=</span><span class="s">"@+id/editText1"</span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:ems=</span><span class="s">"10" </span><span class="nt">&gt;</span>
+
+            <span class="nt">&lt;requestFocus</span><span class="nt">/></span>
+        <span class="nt">&lt;/ EditText &gt;</span>
+    <span class="nt">&lt;/ LinearLayout &gt;</span>
+
+    <span class="nt">&lt; Button </span>
+        <span class="na">android:id=</span><span class="s">"@+id/button1"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:text=</span><span class="s">"Button" </span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/ LinearLayout &gt;</span>
+</pre>
+
+<p align=center ><img src="layouts/image010.jpg" v:shapes="Imagen_x0020_18"></p>
+</br>
+En versiones anterior de Android en vez de utilizar match_parent se utilizaba fill_parent, puedes usar cualquiera de las 2 (hacen lo mismo) pero recomendamos utilizar match_parent (para hacerle caso a google).
+</br>
+Ahora vamos a colocar 3 controles hubicados horizontalmente uno después del otro de la siguiente manera:
+
+<p align=center><img 
+src="layouts/image012.jpg" ></p>
+</br>
+Tomaremos el mismo código anterior y agregaremos un LinearLayout horizontal en donde pondremos los 3 botones e intentemos 2 cosas, dándole un ancho a cada botón del porte de su texto (wrap_content) y luego probaremos dándole un ancho máximo (match_parent) y eremos que pasa.
+Con <span class="na">wrap_content</span>
+<pre>
+<span class="nt">&lt; LinearLayout </span> 
+    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:orientation=</span><span class="s">"vertical"</span> <span class="nt">&gt;</span>
+
+    <span class="nt">&lt; LinearLayout </span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:orientation=</span><span class="s">"horizontal"</span> <span class="nt">&gt;</span>
+
+        <span class="nt">&lt; TextView </span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:text=</span><span class="s">"Esto es un TextView"</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt; EditText</span>
+            <span class="na">android:id=</span><span class="s">"@+id/editText1"</span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:ems=</span><span class="s">"10"</span><span class="nt">&gt;</span>
+
+            <span class="nt">&lt;requestFocus</span><span class="nt">/></span>
+        <span class="nt">&lt;/ EditText &gt;</span>
+    <span class="nt">&lt;/ LinearLayout &gt;</span>
+
+    <span class="nt">&lt; LinearLayout </span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:orientation=</span><span class="s">"horizontal" </span>
+        &gt;
+
+        <span class="nt">&lt; Button </span>
+            <span class="na">android:id=</span><span class="s">"@+id/button1"</span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:text=</span><span class="s">"Button 1" <span class="nt">/&gt;</span>
+
+        <span class="nt">&lt; Button </span>
+            <span class="na">android:id=</span><span class="s">"@+id/button2"</span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:text=</span><span class="s">"Button 2" <span class="nt">/&gt;</span>
+
+        <span class="nt">&lt; Button </span>
+            <span class="na">android:id=</span><span class="s">"@+id/button3"</span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:text=</span><span class="s">"Button 3" <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/ LinearLayout &gt;</span>
+
+<span class="nt">&lt;/ LinearLayout &gt;</span>
+</pre>
+<p align=center><img src="layouts/image014.jpg" v:shapes="Imagen_x0020_20"></p>
+</br>
+Podemos ver que los botones no están del todo bien alineados ya que lo ideal es que el tamaño dependerá del texto del botón y entre los 3 botones no ocupan todo el ancho de pantalla.
+Con <span class="na">match_parent</span>
+<pre>
+<span class="nt">&lt; LinearLayout </span> 
+    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:orientation=</span><span class="s">"vertical"</span> <span class="nt">&gt;</span>
+
+    <span class="nt">&lt; LinearLayout </span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:orientation=</span><span class="s">"horizontal"</span> <span class="nt">&gt;</span>
+
+        <span class="nt">&lt; TextView </span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:text=</span><span class="s">"Esto es un TextView" <span class="nt">&gt;</span>
+
+        <span class="nt">&lt; EditText</span>
+            <span class="na">android:id=</span><span class="s">"@+id/editText1"</span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:ems=</span><span class="s">"10"</span> <span class="nt">&gt;</span>
+
+            <span class="nt">&lt;requestFocus</span><span class="nt">/></span>
+        <span class="nt">&lt;/ EditText &gt;</span>
+    <span class="nt">&lt;/ LinearLayout &gt;</span>
+
+    <span class="nt">&lt; LinearLayout </span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:orientation=</span><span class="s">"horizontal" </span>
+        <span class="nt">&gt;</span>
+
+        <span class="nt">&lt; Button </span>
+            <span class="na">android:id=</span><span class="s">"@+id/button1"</span>
+            <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:text=</span><span class="s">"Button 1"</span> <span class="nt">/&gt;</span>
+
+        <span class="nt">&lt; Button </span>
+           <span class="na"> android:id=</span><span class="s">"@+id/button2"</span>
+            <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:text=</span><span class="s">"Button 2"</span> <span class="nt">/&gt;</span>
+
+        <span class="nt">&lt; Button </span>
+            <span class="na">android:id=</span><span class="s">"@+id/button3"</span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:text=</span><span class="s">"Button 3" <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/ LinearLayout &gt;</span>
+
+<span class="nt">&lt;/ LinearLayout &gt;</span>
+</pre>
+<p align=center><img src="layouts/image016.jpg" v:shapes="Imagen_x0020_21"></p>
+</br>
+Vemos que el primer botón toma en ancho del LinearLayout en el cual está contenido, por lo tanto los otros 2 botones no se logran mostrar por que no caben en la pantalla.
+Entonces si queremos que los 3 botones se muestren y aprovechen todo el ancho de la pantalla, tendremos que aprender sobre el atributo weight.
+La propiedad Weight nos permita dar un "peso" a nuestros controles, lo que vamos a hacer es darle un peso igual a cada uno de nuestros botones agregando la siguiente línea a cada uno android:layout_weight="1" para que quede de la siguiente manera.
+            <span class="nt">&lt; Button </span>
+            <span class="na">android:id=</span><span class="s">"@+id/button1"</span>
+            <span class="na">android:layout_width=</span><span class="s">"0dip"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:text=</span><span class="s">"Button 1" </span>
+            <span class="na">android:layout_weight=</span><span class="s">"1"</span>/&gt;
+El valor para el layout_width de los tres botones lo hemos definido con 0dip para que no tome en cuenta esta propiedad y sí la del peso y pueda distribuir equitativamente los componentes.
+Ademas al LinearLayout que contiene los botones le agregamos la siguiente línea 
+        <span class="na">android:weightSum=</span><span class="s">"3"</span>
+Esto nos dice cuanto va a ser el peso total que van a contener todos los controles del Layout, como en este caso son 3 botones nuestro peso de 1 cada uno, en total se sumara un peso de 3, es decir que se distribuirá el peso entre los 3 botones de manera equitativa ocupando un ancho de un 33% cada uno.
+<pre>
+<span class="nt">&lt; LinearLayout </span> 
+    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:orientation=</span><span class="s">"vertical" &gt;</span>
+
+    <span class="nt">&lt; LinearLayout </span></span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:orientation=</span><span class="s">"horizontal" ></span>
+
+        <span class="nt">&lt; TextView </span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:text=</span><span class="s">"Esto es un TextView"</span> <span class="nt">/&gt;</span>
+
+        <span class="nt">&lt; EditText</span>
+            <span class="na">android:id=</span><span class="s">"@+id/editText1"</span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:ems=</span><span class="s">"10" &gt;
+
+            <span class="nt">&lt;requestFocus</span><span class="nt">/></span>
+        <span class="nt">&lt;/ EditText &gt;</span>
+    <span class="nt">&lt;/ LinearLayout &gt;</span>
+
+    <span class="nt">&lt; LinearLayout </span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:orientation=</span><span class="s">"horizontal" </span>
+        <span class="na">android:weightSum=</span><span class="s">"3" </span>&gt;
+
+        <span class="nt">&lt; Button </span>
+            <span class="na">android:id=</span><span class="s">"@+id/button1"</span>
+            <span class="na">android:layout_width=</span><span class="s">"0dip"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:text=</span><span class="s">"Button 1" </span>
+            <span class="na">android:layout_weight=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
+
+        <span class="nt">&lt; Button </span>
+            <span class="na">android:id=</span><span class="s">"@+id/button2"</span>
+            <span class="na">android:layout_width=</span><span class="s">"0dip"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:text=</span><span class="s">"Button 2" </span>
+            <span class="na">android:layout_weight=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
+
+        <span class="nt">&lt; Button </span>
+            <span class="na">android:id=</span><span class="s">"@+id/button3"</span>
+            <span class="na">android:layout_width=</span><span class="s">"0dip"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:text=</span><span class="s">"Button 3" </span>
+            <span class="na">android:layout_weight=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/ LinearLayout &gt;</span>
+
+<span class="nt">&lt;/ LinearLayout &gt;</span>
+</pre>
+<p align=center ><img src="layouts/image018.jpg" v:shapes="Imagen_x0020_22"></p>
+</br>
+Finalmente veremos cómo asignar pesos distintos a nuestros controles, vamos a hacer que uno de los botones tenga un 50% del ancho de la pantalla y los otros dos 25% cada uno. 
+
+<p align=center><img src="layouts/image020.jpg" v:shapes="Imagen_x0020_23"></p>
+</br>
+Para lograr esto cambiaremos el ancho del primer botón con <span class="na">android:layout_weight=</span><span class="s">"2"</span> y la suma de los anchos del LinearLayout que contiene los botones a android:weightSum="4".
+<pre>
+<span class="nt">&lt; LinearLayout </span> 
+    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:orientation=</span><span class="s">"vertical"</span> &gt;
+
+    <span class="nt">&lt; LinearLayout </span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:orientation=</span><span class="s">"horizontal"</span> &gt;
+
+        <span class="nt">&lt; TextView </span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:text=</span><span class="s">"Esto es un TextView"</span> <span class="nt">/&gt;</span>
+
+        <span class="nt">&lt; EditText</span>
+            <span class="na">android:id=</span><span class="s">"@+id/editText1"</span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:ems=</span><span class="s">"10"</span> &gt;
+
+            <requestFocus />
+        <span class="nt">&lt;/ EditText &gt;</span>
+    <span class="nt">&lt;/ LinearLayout &gt;</span>
+
+    <span class="nt">&lt; LinearLayout </span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:orientation=</span><span class="s">"horizontal" </span>
+        <span class="na">android:weightSum=</span><span class="s">"4"</span>&gt;
+
+        <span class="nt">&lt; Button </span>
+            <span class="na">android:id=</span><span class="s">"@+id/button1"</span>
+            <span class="na">android:layout_width=</span><span class="s">"0dip"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:text=</span><span class="s">"Button 1" </span>
+            <span class="na">android:layout_weight=</span><span class="s">"2"</span><span class="nt">/&gt;</span>
+
+        <span class="nt">&lt; Button </span>
+            <span class="na">android:id=</span><span class="s">"@+id/button2"</span>
+            <span class="na">android:layout_width=</span><span class="s">"0dip"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:text=</span><span class="s">"Button 2" </span>
+            <span class="na">android:layout_weight=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
+
+        <span class="nt">&lt; Button </span>
+            <span class="na">android:id=</span><span class="s">"@+id/button3"</span>
+            <span class="na">android:layout_width=</span><span class="s">"0dip"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:text=</span><span class="s">"Button 3" </span>
+            <span class="na">android:layout_weight=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/ LinearLayout &gt;</span>
+
+<span class="nt">&lt;/ LinearLayout &gt;</span>
+</pre>
+<p align=center><img src="layouts/image022.jpg" v:shapes="Imagen_x0020_24"></p>
+</br>
+Como vemos el ancho del primer botón tiene un ancho de un 50% y el resto de 25% cada uno. Sin embargo surgió otro problema (para lo que probamos este ejemplo con un smartphone de pantalla un tanto pequeña) y es que el texto para los botones 2 y 3 es muy largo para el ancho y tuvo que agrandar su alto para que cupiera logrando que caiga el texto pero cambiando su altura (ya que se tiene que adaptar al texto). SI queremos que todos los botones se vean del mismo tamaño, cambiaremos la altura del botón a match_parent y como los botones están incluidos en un LinearLayout que tiene una altura wrap_content (el tamaño mánimo necesario), todos los botones solo tendrán el alto del o los botones con mayor alto, en este caso, el botón 1 ocupara el mismo alto que los botones 2 y 3.
+<pre>
+    <span class="nt">&lt; LinearLayout </span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"
+        <span class="na">android:orientation=</span><span class="s">"horizontal" 
+        <span class="na">android:weightSum=</span><span class="s">"4"&gt;
+
+        <span class="nt">&lt; Button </span>
+            <span class="na">android:id=</span><span class="s">"@+id/button1"</span>
+            <span class="na">android:layout_width=</span><span class="s">"0dip"</span>
+            <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+            <span class="na">android:text=</span><span class="s">"Button 1" </span>
+            <span class="na">android:layout_weight=</span><span class="s">"2"</span>/&gt;
+
+        <span class="nt">&lt; Button </span>
+            <span class="na">android:id=</span><span class="s">"@+id/button2"</span>
+            <span class="na">android:layout_width=</span><span class="s">"0dip"</span>
+            <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+            <span class="na">android:text=</span><span class="s">"Button 2" </span>
+            <span class="na">android:layout_weight=</span><span class="s">"1"</span>/&gt;
+
+        <span class="nt">&lt; Button </span>
+            <span class="na">android:id=</span><span class="s">"@+id/button3"</span>
+            <span class="na">android:layout_width=</span><span class="s">"0dip"</span>
+            <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+            <span class="na">android:text=</span><span class="s">"Button 3" </span>
+            <span class="na">android:layout_weight=</span><span class="s">"1"</span>/&gt;
+    <span class="nt">&lt;/ LinearLayout &gt;</span>
+</pre>
+	
+	<p align=center><img src="layouts/image024.jpg" v:shapes="Imagen_x0020_25"></p>
+</br>
+Por ultimo vamos a aprender a alinear los controles, esto se logra con la propiedad gravity en este caso alinearemos el botón a la derecha y tendremos otro botón a la izquierda. Para esto el LinearLayout principal lo dejaremos con orientación horizontal, luego crearemos un botón como cualquier otro que se obicará al lado izquierdo y el botón para el lado derecho lo dejaremos dentro de un LinearLayout agregándole el atributo android:gravity="right", con esto hacemos que todo el contenido del Layout se mueva a la derecha.
+<pre>
+<span class="nt">&lt; LinearLayout </span> 
+	<span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+    <span class="na">:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:orientation=</span><span class="s">"horizontal"</span> &gt;
+
+    <span class="nt">&lt; Button </span>
+        <span class="na">android:id=</span><span class="s">"@+id/button3"</span>
+        <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:text=</span><span class="s">"Button 1"</span> /&gt;
+
+    <span class="nt">&lt; LinearLayout </span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:gravity=</span><span class="s">"right"</span>
+        <span class="na">android:orientation=</span><span class="s">"horizontal"</span> &gt;
+
+        <span class="nt">&lt; Button </span>
+            <span class="na">android:id=</span><span class="s">"@+id/button3"</span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:text=</span><span class="s">"Button 3"</span> /&gt;
+    <span class="nt">&lt;/ LinearLayout &gt;</span>
+
+<span class="nt">&lt;/ LinearLayout &gt;</span>
+</pre>
+<p align=center ><img src="layouts/image026.jpg" v:shapes="Imagen_x0020_26"></p>
+</br>
+Con esto hemos aprendido lo básico para aprender a usar los LinearLayout.
+
+RelativeLayout
+
+Los RelativeLayout son ideales para utilizarlos cuando queremos poner un objeto hacia un lado de otro (arriba, abajo, izquierda, derecha), es decir para posicionar un objeto en relación a otro objeto, pero también podemos posicionarlo con respecto al área que corresponde al RelativeLayout.
+En algunos caos utilizar RelativeLayout permite ahorrarnos el trabajo de tener un LinerLayout dentro de otro, de esta manera optimizamos memoria.
+<pre>
+Propiedades
+• <span class="na">android:layout_above</span> indica que el elemento se posicionará justo arriba del elemento que tiene el ID definido como valor de este atributo.
+• <span class="na">android:layout_toLeftOf</span> indica que el elemento se posicionará a la izquierda del elemento cuyo ID coincida con el definido en el valor de este atributo.
+• <span class="na">android:layout_toRightOf</span> posiciona al elemento a la derecha del elemento cuyo ID coincida con el proporcionado en el valor de este atributo.
+• <span class="na">android:layout_bottom</span> posiciona al elemento debajo del que tenga la ID proporcionada en el valor del atributo.
+
+Siempre debemos indicar la ID del control (View) del cual queremos basar la posición, por ejemplo: <span class="na">android:layout_toLeftOf=</span><span class="s">"@id/button1"</span> dónde el elemento cuyo ID es button1 se definiá en el archivo XML.
+
+También podemos posicionar nuestro View de acuerdo al contenedor (RelativeLayout) en el que se encuentra, con los siguientes atributos cuyos valores solo pueden ser true o false.
+• <span class="na">android:layout_alignParentTop</span> Indica al View que su borde superior deberá estar alineado con el borde superior del RelativeLayout.
+• <span class="na">android:layout_alignParentBottom</span> Indica al View que su borde inferior deberá estar alineado con el borde inferior del RelativeLayout.
+• <span class="na">android:layout_alignParentLeft</span> Indica al View que su borde izquierdo deberá estar alineado con el borde izquierdo del RelativeLayout.
+• <span class="na">android:layout_alignParentRight</span> Indica al View que su borde derecho deberá estar alineado con el borde derecho del RelativeLayout.
+• <span class="na">android:layout_centerHorizontal</span> Permite centrar horizontalmente al View con respecto a su RelativeLayout.
+• <span class="na">android:layout_centerVertical</span> Permite centrar verticalmente al View con respecto a su RelativeLayout.
+</pre>
+Ejemplo
+Cuando creamos un proyecto el .xml creado por defecto viene de esta manera.
+<pre>
+<?xml version="1.0" encoding="utf-8"?>
+<span class="nt">&lt; RelativeLayout </span> 
+    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:paddingBottom=</span><span class="s">"@dimen/activity_vertical_margin"</span>
+    <span class="na">android:paddingLeft=</span><span class="s">"@dimen/activity_horizontal_margin"</span>
+    <span class="na">android:paddingRight=</span><span class="s">"@dimen/activity_horizontal_margin"</span>
+    <span class="na">android:paddingTop=</span><span class="s">"@dimen/activity_vertical_margin"</span>
+    <span class="na">tools:context=</span><span class="s">".MainActivity" ></span>
+
+<span class="nt">&lt/RelativeLayout></span> 
+</pre>
+En donde padding viene con un atributo por defecto y que sirve para tener un margen en el Layout (si se quiere se puede borrar).
+Agreguemos algunos controles:
+<pre>
+<?xml version="1.0" encoding="utf-8"?>
+<span class="nt">&lt; RelativeLayout </span> 
+    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:paddingBottom=</span><span class="s">"@dimen/activity_vertical_margin"</span>
+    <span class="na">android:paddingLeft=</span><span class="s">"@dimen/activity_horizontal_margin"</span>
+    <span class="na">android:paddingRight=</span><span class="s">"@dimen/activity_horizontal_margin"</span>
+    <span class="na">android:paddingTop=</span><span class="s">"@dimen/activity_vertical_margin"</span>
+    <span class="na">tools:context=</span><span class="s">".MainActivity" ></span>
+
+    <span class="nt">&lt; TextView </span>
+        <span class="na">android:id=</span><span class="s">"@+id/textView1"</span>
+        <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:text=</span><span class="s">"TextView" </span>/>
+
+    <span class="nt">&lt; EditText</span>
+        <span class="na">android:id=</span><span class="s">"@+id/editText1"</span>
+        <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_toRightOf=</span><span class="s">"@+id/textView1"</span>
+        <span class="na">android:ems=</span><span class="s">"10" ></span>
+
+        <requestFocus />
+    <span class="nt">&lt;/ EditText &gt;</span>
+
+    <span class="nt">&lt; Button </span>
+        <span class="na">android:id=</span><span class="s">"@+id/button1"</span>
+        <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_below=</span><span class="s">"@+id/editText1"</span>
+        <span class="na">android:layout_alignParentRight=</span><span class="s">"true"</span>
+        <span class="na">android:text=</span><span class="s">"Button" </span>/>
+
+<span class="nt">&lt /RelativeLayout></span>
+</pre>
+</br>
+Cuando al EditText le doy el valor <span class="na">android:layout_toRightOf=</span><span class="s">"@+id/textView1"</span>
+ Significa que lo estoy alineando al lado derecho del control con la ID "textView1" (el cual es un TextView), a su vez al Button cuando le doy el valor android:layout_below="@+id/editText1" significa que lo estoy posicionando debajo de EditText y también le agrego el valor android:layout_alignParentRight="true" que posiciona al botón apegado al lado derecho del RelativeLayout. 
+
+ 
+<p align=center><img src="layouts/image028.jpg" v:shapes="Imagen_x0020_27"></p>
+</br>
+Otro ejemplo
+Código:
+<pre>
+<span class="nt">&lt; RelativeLayout </span> 
+    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:paddingBottom=</span><span class="s">"@dimen/activity_vertical_margin"</span>
+    <span class="na">android:paddingLeft=</span><span class="s">"@dimen/activity_horizontal_margin"</span>
+    <span class="na">android:paddingRight=</span><span class="s">"@dimen/activity_horizontal_margin"</span>
+    <span class="na">android:paddingTop=</span><span class="s">"@dimen/activity_vertical_margin"</span>
+    <span class="na">tools:context=</span><span class="s">".MainActivity" </span>>
+
+    <span  class="nt">&lt; TextView </span>
+        <span class="na">android:id=</span><span class="s">"@+id/textView1"</span>
+        <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:text=</span><span class="s">"@string/hello_world" </span>/>
+
+    <span class="nt">&lt;ImageView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/imageView1"</span>
+        <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_alignLeft=</span><span class="s">"@+id/textView1"</span>
+        <span class="na">android:layout_below=</span><span class="s">"@+id/textView1"</span>
+        <span class="na">android:src=</span><span class="s">"@drawable/ic_launcher" </span>/>
+
+    <span class="nt">&lt;ImageView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/imageView2"</span>
+        <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_alignParentRight=</span><span class="s">"true"</span>
+        <span class="na">android:src=</span><span class="s">"@android:drawable/star_big_on" </span>/>
+
+    <span class="nt">&lt;CheckBox</span>
+        <span class="na">android:id=</span><span class="s">"@+id/checkBox1"</span>
+        <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_toRightOf=</span><span class="s">"@+id/textView1"</span>
+        <span class="na">android:text=</span><span class="s">"CheckBox" </span>/>
+
+<span class="nt">&lt/RelativeLayout></span>
+</pre>
+</br>
+Resultado:
+
+<p align=center><img src="layouts/image030.jpg" v:shapes="Imagen_x0020_28"></p>
+</div>
+</body>
+
+</html>

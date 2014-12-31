@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 3.6  (Windows)">
+	<META NAME="CREATED" CONTENT="20130314;15550904">
+	<META NAME="CHANGED" CONTENT="20130314;15554790">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 2cm }
+		P { margin-bottom: 0.21cm }
+		H1 { text-indent: 0.63cm; margin-top: 0.85cm; color: #365f91; line-height: 150%; text-align: justify; page-break-inside: avoid; page-break-after: avoid }
+		H1.western { font-family: "Cambria", serif; font-size: 14pt }
+		H1.cjk { font-family: "Times New Roman", serif; font-size: 14pt }
+		H1.ctl { font-family: "Times New Roman", serif; font-size: 14pt; so-language: en-US }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<H1 CLASS="western">Componentes de una aplicaci&oacute;n en Android</H1>
+<P STYLE="margin-bottom: 0cm"><B>Activity</B> 
+</P>
+<P STYLE="margin-bottom: 0cm">Una actividad es el componente m&aacute;s
+usado en las aplicaciones Android. T&iacute;picamente una actividad
+representa una pantalla individual en el terminal y presenta una
+interfaz gr&aacute;fica al usuario. Cuando una actividad es abierta,
+la actividad previa es puesta en pausa y no volver&iacute;a al estado
+de ejecuci&oacute;n hasta que vuelva a ser invocada. Dentro de una
+Activity crearemos todo el c&oacute;digo exclusivo de Android y
+mostraremos la interfaz gr&aacute;fica que el usuario ver&aacute; en
+su dispositivos. Es decir, una Actividad es similar a las ventanas en
+un programa de escritorio, con un &aacute;rea gr&aacute;fica que
+contiene todos los objetos con los que podemos interactuar.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><B>Services</B> 
+</P>
+<P STYLE="margin-bottom: 0cm">Los servicios se ejecutan en segundo
+plano por un tiempo indefinido, esperando que se ejecute alg&uacute;n
+evento.  Los servicios pueden seguir existiendo incluso si la
+Actividad de donde fue llamada es destruida.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><B>Broadcast receivers</B> 
+</P>
+<P STYLE="margin-bottom: 0cm">Se utilizan para recibir y reaccionar
+ante eventos espec&iacute;ficos (por ejemplo: &ldquo;Bater&iacute;a
+baja&rdquo;, &ldquo;SMS recibido&rdquo;, &ldquo;Tarjeta SD
+insertada&rdquo;). Este tipo de componentes no tienen interfaz
+gr&aacute;fica y pueden reaccionar ante eventos o por otras
+aplicaciones broadcast.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><B>Intent</B> 
+</P>
+<P STYLE="margin-bottom: 0cm">Permite la comunicaci&oacute;n entre
+los distintos componentes de Android. Se utiliza para moverse desde
+una Actividad a otra (pudiendo interactuar entre ellas enviando y
+recibiendo datos), abrir otras aplicaciones, iniciar un servicio,
+etc.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><B>View</B></P>
+<P STYLE="margin-bottom: 0cm"><FONT COLOR="#2a2a2a"><SPAN STYLE="background: #fafcff">Las
+vistas son elementos gr&aacute;ficos que se incluyen en las
+actividades y que permiten mostrar informaci&oacute;n al usuario o
+permitir que &eacute;ste interact&uacute;e con la aplicaci&oacute;n.</SPAN></FONT>
+Los View o vistas son muy parecido a los objetos gr&aacute;ficos que
+utilizamos en las aplicaciones, es decir los botones, cuadros de
+texto, im&aacute;genes, etc. Pero en Android solo son similares por
+que las Views son m&aacute;s que eso.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><B>Layout</B></P>
+<P STYLE="margin-bottom: 0cm">Los Layout sirven para que podamos
+ubicar todos nuestros controles de interfaz que vamos agregando a
+nuestra aplicaci&oacute;n. Todo View debe estar dentro de un Layout y
+cada Layout puede tener uno o m&aacute;s Views.</P>
+</BODY>
+</HTML>

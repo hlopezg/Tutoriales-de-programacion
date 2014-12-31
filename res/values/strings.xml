@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="configuracion">Configuration</string>
+    
+    <string name="comenzar_ahora">Start now</string>
+	<string name="bienvenido">Welcome</string>
+    <string name="contenido">Content</string>
+    <string name="opciones">Options</string>
+    
+    <string name="agregado_el">Added on</string>
+    
+    <string name="filtro">Filter</string>
+    <string name="filtrar_por">Filter by:</string>
+    <string name="cambiar_idioma_tutoriales">Select language tutorials</string>
+    <string name="elegir_lenguajes">Choose languages</string>
+    
+    <string name="guardar">Save</string>
+    
+    
+    <string name="seleccione_gestor">Select your favorite manager to send an e-mail.</string>
+    <string name="error_al_agregar_favorito">An error occurred and could not add to favorite</string>
+    <string name="ahora_es_favorito">Now is favorite.</string>
+    <string name="ya_no_es_favorito">Now it is no longer favorite.</string>
+    <string name="acerca_de_la_aplicacion">About the application</string>
+    <string name="acerca_de">About</string>
+    <string name="versiones">Versions</string>
+    <string name="sobre_autor">About the Author</string>
+    <string name="explicacion">Explanation</string>
+    <string name="codigo">Code</string>
+    <string name="ejemplo">Example</string>
+    <string name="autor">Author</string>
+    <string name="descargando_archivo">Downloading File</string>
+    <string name="necesita_lector_pdf">You need a PDF reader to view this file</string>
+    <string name="contactar_con_autor">Contact author</string>
+    <string name="favorito">Favorite</string>
+    <string name="version">Version</string>
+    <string name="fecha_ultima_version">Last version</string>
+    <string name="hecha_un_vistazo">Take a look at this application.</string>
+    
+    <string name="contacto">Contact</string>
+
+    <style name="ButtonText">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+
+    <string name="app_name">Programming Tutorials</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="categorias">Categories</string>
+    <string name="categorias_internet">Internet</string>
+    <string name="categorias_PDF">PDF</string>
+    <string name="categorias_dispositivo">On your device</string>
+    <string name="categorias_youtube">YouTube</string>
+
+    <string-array name="filtros">
+        <item>Device</item>
+        <item>Web</item>
+        <item>PDF</item>
+        <item>PDF downloaded</item>
+        <item>Youtube</item>
+        <item>All</item>
+        <item>Favorites</item>
+        <item>Language</item>
+    </string-array>
+    
+    <string name="espanol">Spanish</string>
+     <string name="ingles">English</string>
+     <string name="aceptar">Ok</string>
+    <string name="seleccione_los_idiomas">Select the languages ​​you want to find the tutorials.</string>
+    <string name="debe_seleccionar_un_idioma">You must select at least one language.</string>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="fragment_versiones_de_android_1">
+<![CDATA[Antes de comenzar, debemos saber algunas cosas básicas de Android que nos permitirá comprender mejor este sistema operativo.
+<br><br>Android es un sistema operativo basado en Linux (no es un celular o una marca como algunos creen), diseñado principalmente para teléfonos inteligentes (smartphones) y tabletas (tablets) aunque también existen otros dispositivos con Android como televisores o incluso lavadoras.
+<br><br>El desarrollador debe saber que existen diversas versiones del sistema operativo cada una con su  propia API (Application Programming Interface), por ejemplo la versión 4.0 de Android tiene la API 14. 
+<br><br>Al momento de crear un proyecto en Android debemos elegir la API en la que vamos a desarrollar (como lo veremos un poco más adelante) y solo los dispositivos que tengan esa API o una versión mayor podrán ejecutar el programa, por ejemplo, si escojo la versión 14 de la API solo los dispositivos que tengan dicha versión o una más reciente podrán ejecutar el programa (probablemente si tiene un dispositivo móvil con versión anterior a nuestra aplicación ni si quiera les aparezca en Google Play).
+<br><br>Es importante para el desarrollador saber cuáles son las API más utilizadas y su porcentaje de cuota en el mercado (para eso se puede buscar en Google como “distribución de versiones Android”), evidentemente entre más baja sea la versión que escojamos, mayor cantidad de dispositivos podrán acceder a nuestra aplicación pero por otra parte entre más antigua sea la versión menos cosas podremos hacer, por ejemplo es muy diferente programar para Android 2.0 que para 4.0, en cambio no es mucho la diferencia programar en la versión 4 que en la versión 4.0.3.]]>
+    </string>
+    <string name="fragment_componentes_1">
+<![CDATA[<b>Activity:</b> Una actividad es el componente más usado en las aplicaciones Android. Típicamente una actividad representa una pantalla individual en el terminal y presenta una interfaz gráfica al usuario. Cuando una actividad es abierta, la actividad previa es puesta en pausa y no volvería al estado de ejecución hasta que vuelva a ser invocada. Dentro de una Activity crearemos todo el código exclusivo de Android y mostraremos la interfaz gráfica que el usuario verá en su dispositivos. Es decir, una Actividad es similar a las ventanas en un programa de escritorio, con un área gráfica que contiene todos los objetos con los que podemos interactuar.
+
+<br><br><b>Services:</b> Los servicios se ejecutan en segundo plano por un tiempo indefinido, esperando que se ejecute algún evento.  Los servicios pueden seguir existiendo incluso si la Actividad de donde fue llamada es destruida.
+
+<br><br><b>Broadcast receivers:</b> Se utilizan para recibir y reaccionar ante eventos específicos (por ejemplo: “Batería baja”, “SMS recibido”, “Tarjeta SD insertada”). Este tipo de componentes no tienen interfaz gráfica y pueden reaccionar ante eventos o por otras aplicaciones broadcast.
+
+<br><br><b>Intent:</b> Permite la comunicación entre los distintos componentes de Android. Se utiliza para moverse desde una Actividad a otra (pudiendo interactuar entre ellas enviando y recibiendo datos), abrir otras aplicaciones, iniciar un servicio, etc.
+<br><br><b>View:</b> Las vistas son elementos gráficos que se incluyen en las actividades y que permiten mostrar información al usuario o permitir que éste interactúe con la aplicación. Los View o vistas son muy parecido a los objetos gráficos que utilizamos en las aplicaciones, es decir los botones, cuadros de texto, imágenes, etc. Pero en Android solo son similares por que las Views son más que eso.
+<br><br><b>Layout:</b> Los Layout sirven para que podamos ubicar todos nuestros controles de interfaz que vamos agregando a nuestra aplicación. Todo View debe estar dentro de un Layout y cada Layout puede tener uno o más Views.]]>
+    </string>
+    <string name="fragment_creacion_proyecto_android">
+<![CDATA[
+Vamos a crear un proyecto vacío y vamos a explicar que es lo que contiene y algunas cosas básicas que profundizaremos luego.
+<br><br><b>Archivo XML</b>
+<br>Antes de programar vamos a crear la parte visual de nuestra actividad, modificando el archivo xml que se creó automáticamente junto a nuestro proyecto en el directorio /res/layout/, en nuestro caso modificaremos nuestra actividad principal que se encuentra en /res/layout/activity_main.xml. Podemos ver la parte gráfica presionando la pestaña “Graphical Layout” y el código de la parte gráfica en la pestañan actividad_main.xml.
+]]>
+    </string>
+    <string name="introduccion">
+<![CDATA[Este tutorial de programación para Android es creado por <b>Héctor López Gatica</b>, el autor de esta aplicación. 
+
+<br><br>Android es un sistema operativo para dispositivos móviles como teléfonos inteligentes y tablets. Su principal característica es utiliza en un kernel adaptado de Linux.
+
+<br><br>Las aplicaciones se desarrollan habitualmente en el lenguaje Java con Android Software Development Kit (Android SDK).
+
+<br><br><b>Algunas Características de Android</b><br>
+
+• Gran variedad de hardware.<br> 
+• Diseñado para dispositivos con recursos limitados (aun que cada vez mayores), libre y totalmente abierta para todos.<br>
+• Launchers personalizados.<br>
+• ROMs personalizadas.
+
+<br><br><b>Tener en cuenta al desarrollar</b><br>
+
+• Recursos limitados: memoria, almacenamiento, CPU y batería.<br> 
+• Esforzarse en desarrollar bien desde el primer momento.<br>
+• No se puede agregar más hardware como en un sistema tradicional (salvo alguna excepción).<br>
+• Hay que hacer aplicaciones usables , es decir, que los usuarios (de diferentes edades y experiencias con estas tecnologías) puedan utilizar el software sin mayor dificultad. 
+<br><br>
+Tener en cuenta de que la pantalla del dispositivo puede pequeña (4 pulgadas o menos), mediana o grande (tablets o con conexión a pantallas externas).]]>
+    </string>
+    <string name="about_autor">
+<![CDATA[Made by <b>Héctor López Gatica</b>
+]]>
+    </string>
+    <string name="about_compartir">Share this App</string>
+    <string name="about_califica">Rate this App</string>
+    <string name="about_enviar_correo">Send an email to the author</string>
+
+    <!-- webview -->
+    <string name="back">Back</string>
+    <string name="forward">Forward</string>
+    <string name="stop">Stop</string>
+    <string name="history">History</string>
+    <string name="go">Go</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="download">Donwload</string>
+    <string name="question">Want to download this file?</string>
+    <string name="result">>Saved file: </string>
+    <string name="clear">Clear</string>
+    <string name="close">Close</string>
+    <string name="stopping">Stopping</string>
+    <string name="favicon">Favicon</string>
+    <string name="noconnection">There is no internet connection</string>
+    <string name="error">Error</string>
+    <string name="nosd">Storage not available</string>
+    <string name="buscar">Search by name or author</string>
+
+    <!-- Versiones -->
+    <string name="version_0_1">
+<![CDATA[<b>Version 0.1</b>
+          <br><br>In this first version is included: 
+          <br><br>- List of tutorials on the device, Web, PDF and Youtube (online download).
+          <br><br>- The tutorials on the device does not need Internet (and staying on the device) and can bring an interactive example. Only for languages ​​that can run on Android (for now only Android).
+          <br><br>- Search for text entry.
+          <br><br>- Share the application and contact the author.
+          <br><br>- Tutorials of the following programming languages: 
+          <br> &nbsp;-> Android
+          <br> &nbsp;-> ASP.NET
+          <br> &nbsp;-> C
+          <br> &nbsp;-> C#
+          <br> &nbsp;-> C++
+          <br> &nbsp;-> Django
+          <br> &nbsp;-> HTML5
+          <br> &nbsp;-> iOS 6
+          <br> &nbsp;-> Java
+          <br> &nbsp;-> JQuery Mobile
+          <br> &nbsp;-> Perl
+          <br> &nbsp;-> PHP
+          <br> &nbsp;-> Ruby on Rails
+          <br> &nbsp;-> SQL
+          <br> &nbsp;-> Unity
+          <br> &nbsp;-> Windows Phone
+           ]]>
+    </string>
+    
+      <string name="version_0_22">
+<![CDATA[<b>Version 0.22</b>
+		<br><br>- Ahora funciona el botón "Calificar esta aplicación".
+         <br><br>- Ahora se agrupa por el nombre del lenguaje.
+		 <br><br>- Correción de error menor.
+		 <br><br>- Nuevos tutoriales de:
+		 <br> &nbsp;-> Corona
+		 <br> &nbsp;-> JavaScript
+           ]]>
+    </string>
+    
+              <string name="version_0_23">
+<![CDATA[<b>Versión 0.23</b>
+		<br><br>- Correción de errores menores.
+           ]]>
+    </string>
+    
+    <string name="sobre_el_autor">
+<![CDATA[This software is developed by <b>Héctor López Gatica</b>from Concepción, Chile.
+                               
+          <br><br>My contact email is <b>hector.lopez.gatica@gmail.com</b> and my is Twitter <b>http://twitter.com/helopezga</b>  ]]>
+    </string>
+    <string name="pdf_archivo">PDF File</string>
+    <string name="pdf_abrir">Open PDF</string>
+    <string name="pdf_descargar">Download PDF</string>
+    <string name="bienvenida1_1">This application enables you to learn about different programming languages ​​and watch them wherever you want.</string>
+    <string name="bienvenida2_1">Tutorial inlude the device. You can bring interactive examples where they use Android\'s unique features.</string>
+    <string name="bienvenida2_2">Tutorial in PDF for download.</string>
+    <string name="bienvenida2_3">Tutorial in PDF already downloaded and ready to read.</string>
+    <string name="bienvenida2_4">Tutorial online.</string>
+    <string name="bienvenida2_5">Tutorial added to your favorites.</string>
+    <string name="bienvenida3_1">To display the options menu <b>you can swipe from the left side to the right</b> or you can press the options icon.</string>
+
+</resources>
